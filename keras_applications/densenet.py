@@ -204,7 +204,7 @@ def DenseNet(blocks,
 
     x = img_input
 #     x = layers.ZeroPadding2D(padding=((3, 3), (3, 3)))(img_input)
-    x = layers.Conv2D(64, 3, strides=2, use_bias=False, name='conv1/conv')(x)
+    x = layers.Conv2D(64, 3, strides=1, use_bias=False, name='conv1/conv')(x)
     x = layers.BatchNormalization(
         axis=bn_axis, epsilon=1.001e-5, name='conv1/bn')(x)
     x = layers.Activation('relu', name='conv1/relu')(x)
